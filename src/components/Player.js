@@ -2,8 +2,6 @@ import React from "react";
 
 export default function Player(props) {
 
-    console.log(props.value)
-
     return (
         <div className="playerbox">
             <div className="uno">
