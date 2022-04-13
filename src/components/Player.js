@@ -19,7 +19,6 @@ export default function Player(props) {
                 </h4>
             </div>
 
-            
             <div className="dos">
                 <ul>
                     <li>
@@ -44,6 +43,7 @@ export default function Player(props) {
                     </li>
                 </ul>
             </div>
+
             <div className="tres">
                 <ul>
                     <li>

@@ -4,6 +4,7 @@ import SearchList from "./SearchList";
 function Search(props) {
   const [name, setName] = useState("");
   const [searchResults, setSearchResults] = useState([]);
+  const [badSearch, setBadSearch] = useState(false);
 
   function handleChange(e) {
     setName(e.target.value);
@@ -15,7 +16,7 @@ function Search(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-
+    setBadSearch(false);
 
     fetch(`https://www.balldontlie.io/api/v1/players?search=${name}`)
     .then(response => response.json())
@@ -28,7 +29,10 @@ function Search(props) {
             }
 
         });
-
+        
+        if (arr.length < 1) {
+            setBadSearch(true)
+        }
         return arr
     })
     .then(arr => setSearchResults(arr))
@@ -70,7 +74,8 @@ function Search(props) {
     </div>
     <div className="searchResults">
         <ul>
-            {resultsList}
+            {/* {resultsList.length >= 1 ? resultsList : 'Try Again'} */}
+            {badSearch ? 'Try Again. Search for a player who played this season.' : resultsList}
         </ul>
         
     </div>
