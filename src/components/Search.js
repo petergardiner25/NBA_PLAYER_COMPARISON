@@ -74,7 +74,6 @@ function Search(props) {
     </div>
     <div className="searchResults">
         <ul>
-            {/* {resultsList.length >= 1 ? resultsList : 'Try Again'} */}
             {badSearch ? 'Try Again. Search for a player who played this season.' : resultsList}
         </ul>
         
