@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function SearchList (props) {
-    console.log(props)
+
     return(
         <>
         <li className="clicker" onClick={() => {
