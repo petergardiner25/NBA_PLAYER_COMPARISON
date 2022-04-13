@@ -1,6 +1,7 @@
 import Player from './components/Player';
 import Search from './components/Search';
 import React, { useEffect, useState } from 'react';
+import Loading from './components/Loading';
 
 
 const PLAYER_URL = 'https://www.balldontlie.io/api/v1/players/'
@@ -80,7 +81,12 @@ function App() {
   }, [id1, id2]);
 
   if (!player || !player2){
-    return "loading..."
+    return (
+      <div className='loading'>
+        <Loading/>
+      </div>
+    )
+    
   }
   else {
 
