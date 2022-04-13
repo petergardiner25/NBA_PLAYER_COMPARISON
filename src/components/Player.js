@@ -15,7 +15,7 @@ export default function Player(props) {
                     {"Position: " + props.value.info.position}
                 </h4>
                 <h4>
-                    {'Height: ' + props.value.info.feet + "'" + props.value.info.inches + '"'}
+                    {props.value.info.feet ? 'Height: ' + props.value.info.feet + "'" + props.value.info.inches + '"': ''}
                 </h4>
             </div>
 

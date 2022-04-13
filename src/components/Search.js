@@ -23,13 +23,10 @@ function Search(props) {
     .then(response => {
         let arr= [];
         response.data.forEach(element => {
-            if(element.height_feet){
-                const newSearchResult = {id: element.id, firstname: element.first_name, lastname: element.last_name, team: element.team.full_name};
-                arr.push(newSearchResult);
-            }
 
+            const newSearchResult = {id: element.id, firstname: element.first_name, lastname: element.last_name, team: element.team.full_name};
+            arr.push(newSearchResult);
         });
-        
         if (arr.length < 1) {
             setBadSearch(true)
         }
