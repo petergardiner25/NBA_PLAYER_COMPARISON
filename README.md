@@ -1,4 +1,4 @@
-This React app uses the https://www.balldontlie.io/ open source API to gather data on NBA players from the Current/most recent season. 
+This React app uses the https://www.balldontlie.io/ open source API to gather data on NBA players from the current/most recent season. 
 
 Within APP.js there is useEffect() hook that calls two different API endpoints to get player information and stats everytime the player ID state is updated. This is all done for two different players and Id state hooks in order to generate two players to compare. 
 
