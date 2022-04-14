@@ -9,27 +9,29 @@ const STATS_URL = 'https://www.balldontlie.io/api/v1/season_averages?player_ids[
 
 
 function App() {
-
-  const [id1, setId1] = useState(322);
-  const [id2, setId2] = useState(57);
-  const [player, setPlayer] = useState(null);
-  const [player2, setPlayer2] = useState(null);
-
+  const [ids, setIds] = useState([322,57]);
+  const [players, setPlayers] = useState([{'p': 'loading'},{'p': 'loading'}]);
 
  let handleCallback1 = (childData) => {
-    setId1(childData);
+    let newIds = [...ids];
+    let newId = childData
+    newIds[0] = newId;
+    setIds(newIds);
   }
 
   let handleCallback2 = (child2Data) => {
-    setId2(child2Data);
+    let newIds = [...ids];
+    let newId = child2Data
+    newIds[1] = newId;
+    setIds(newIds);
   }
 
   useEffect(() => {
 
-    let arrIds = [id1, id2]
+    // let arrIds = [id1, id2]
     let mounted = true;
 
-    arrIds.forEach(element => {
+    ids.forEach(element => {
       let PLAYERID = element;
       let info = {};
       let stats = {};
@@ -59,10 +61,17 @@ function App() {
 
           stats = {'assists': ast, 'points': pts, 'fgP': fgP, 'fg3P': fg3P, 'mins': mins, 'reb': reb, 'stl': stl, 'blk':blk, 'to':to, 'ftP':ftP}
 
-          if (arrIds[0] === element) {
-            setPlayer({'info':info,'stats': stats});
+          if (ids[0] === element) {
+            let newPlayers = [...players];
+            let newPlayer = {'info':info,'stats': stats}
+            newPlayers[0].p = newPlayer;
+            setPlayers(newPlayers);
+
           } else {
-            setPlayer2({'info':info,'stats': stats});
+            let newPlayers = [...players];
+            let newPlayer = {'info':info,'stats': stats}
+            newPlayers[1].p = newPlayer;
+            setPlayers(newPlayers);
           }
         };
 
@@ -76,12 +85,13 @@ function App() {
             if (mounted){
                 handlePlayer(data);
             }
+
         }).catch(err => console.log(err));
       });
       return () => mounted = false;
-  }, [id1, id2]);
+  }, [ids]);
 
-  if (!player || !player2){
+  if (players[1].p === 'loading' || players[0].p === 'loading'){
     return (
       <div className='loading'>
         <Loading/>
@@ -98,11 +108,11 @@ function App() {
             <div className='wrapper'>
               <div className='one'>
                 <Search  parentCallback = {handleCallback1}/>
-                <Player value={player} value2={player2}/>
+                <Player value={players[0]} value2={players[1]}/>
               </div>
               <div className='two'>
                 <Search parentCallback = {handleCallback2}/>
-                <Player value={player2} value2={player}/>
+                <Player value={players[1]} value2={players[0]}/>
               </div>
 
             </div>
