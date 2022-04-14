@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/NBA_PLAYER_COMPARISON/static/css/main.101f72a7.css",
-    "main.js": "/NBA_PLAYER_COMPARISON/static/js/main.780b0ab6.js",
+    "main.js": "/NBA_PLAYER_COMPARISON/static/js/main.dae5692a.js",
     "static/js/787.28cb0dcd.chunk.js": "/NBA_PLAYER_COMPARISON/static/js/787.28cb0dcd.chunk.js",
     "static/media/dean-bennett-nFjLHE4vmn4-unsplash.jpg": "/NBA_PLAYER_COMPARISON/static/media/dean-bennett-nFjLHE4vmn4-unsplash.fbdcc23cdc27106dbe16.jpg",
     "index.html": "/NBA_PLAYER_COMPARISON/index.html",
     "main.101f72a7.css.map": "/NBA_PLAYER_COMPARISON/static/css/main.101f72a7.css.map",
-    "main.780b0ab6.js.map": "/NBA_PLAYER_COMPARISON/static/js/main.780b0ab6.js.map",
+    "main.dae5692a.js.map": "/NBA_PLAYER_COMPARISON/static/js/main.dae5692a.js.map",
     "787.28cb0dcd.chunk.js.map": "/NBA_PLAYER_COMPARISON/static/js/787.28cb0dcd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.101f72a7.css",
-    "static/js/main.780b0ab6.js"
+    "static/js/main.dae5692a.js"
   ]
 }
