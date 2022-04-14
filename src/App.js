@@ -15,6 +15,7 @@ function App() {
   const [player, setPlayer] = useState(null);
   const [player2, setPlayer2] = useState(null);
 
+
  let handleCallback1 = (childData) => {
     setId1(childData);
   }
