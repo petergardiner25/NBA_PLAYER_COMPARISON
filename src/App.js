@@ -104,7 +104,7 @@ function App() {
       return (
           <>
             <h1>NBA PLAYER COMPARISON</h1>
-            <h2 className='subHead'>2021-2022 Season Averages</h2>
+            <h2 className='subHead'>2023-2024 Season Averages</h2>
             <div className='wrapper'>
               <div className='one'>
                 <Search  parentCallback = {handleCallback1}/>
